@@ -1,0 +1,33 @@
+#navbar {
+  --navbar-height: 0;
+  transition: top 0.3s ease-in-out;
+
+  &.show {
+    top: 0;
+  }
+
+  &.hide {
+    top: var(--navbar-height);
+  }
+
+  nav div.hamburger {
+    $hamburger-height: 0.625rem;
+    height: $hamburger-height;
+
+    &::before {
+      content: "";
+      height: 1px;
+      margin-bottom: $hamburger-height;
+      position: absolute;
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      margin-top: $hamburger-height;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

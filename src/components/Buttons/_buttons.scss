@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+
+.button {
+    cursor: pointer;
+    transition-duration: 300ms;
+    transition-property: background-color,
+        border-color;
+    transition-timing-function: ease-in-out;
+
+    &.internal-effect:hover,
+    &.external-effect {
+        background-color: $strongPink;
+        border-color: $strongPink;
+
+        .icon-container svg path,
+        span {
+            color: white;
+            stroke: white;
+        }
+    }
+
+    &.long-button {
+
+        &.internal-effect:hover,
+        &.external-effect {
+            .icon-container svg {
+                animation: moveArrowLeft 500ms ease-in-out;
+
+                @keyframes moveArrowLeft {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    50% {
+                        transform: translateX(-110%);
+                    }
+
+                    51% {
+                        opacity: 0;
+                        transform: translateX(110%);
+                    }
+
+                    52% {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.circle-button,
+    &.title-button {
+
+        &.internal-effect:hover,
+        &.external-effect {
+            .icon-container svg {
+                animation: moveArrowTopRight 500ms ease-in-out;
+            }
+        }
+    }
+
+    @keyframes moveArrowTopRight {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(110%, -110%);
+        }
+
+        51% {
+            opacity: 0;
+            transform: translate(-110%, 110%);
+        }
+
+        52% {
+            opacity: 1;
+        }
+    }
+}

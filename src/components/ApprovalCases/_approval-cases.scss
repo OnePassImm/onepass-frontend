@@ -1,0 +1,35 @@
+#approval-cases {
+    .image-runner-container {
+        &:hover .image-runner {
+            animation-play-state: paused;
+        }
+
+        .image-runner {
+            animation: marquee 180s linear infinite;
+            counter-reset: image-counter;
+
+            .inner-image-container {
+                position: relative;
+
+                >div {
+                    position: unset !important;
+                }
+
+                &::before {
+                    content: counter(image-counter, decimal-leading-zero);
+                    counter-increment: image-counter;
+                }
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+}
