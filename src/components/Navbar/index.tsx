@@ -93,7 +93,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 					</li>
 				))}
 			</ul>
-			<div className={`${STYLE_GROUPS.flexCenter} bg-red-600 w-[95%] h-1 self-center`}></div>
+			<div className={`${STYLE_GROUPS.flexCenter} bg-strongBlue w-[95%] h-1 self-center`}></div>
 		</div>
 	);
 };

@@ -11,11 +11,11 @@ type TDateField = {
 const DateField = (props: TDateField) => {
 	return (
 		<div className="date-field-container w-full">
-			<label className="label w-fit font-medium text-strongPink text-base md:text-xl after:content-[':'] after:ml-[0.125rem] after:mr-1">{props.label}</label>
+			<label className="label w-fit font-medium text-strongBlue text-base md:text-xl after:content-[':'] after:ml-[0.125rem] after:mr-1">{props.label}</label>
 			<input
 				type="date"
 				onChange={(event) => props.handleChangeValue(event.target.value)}
-				className="border-b border-strongPink text-strongPink placeholder-strongPink text-base md:text-xl font-medium focus:outline-none focus:placeholder:text-transparent"
+				className="border-b border-strongBlue text-strongBlue placeholder-strongBlue text-base md:text-xl font-medium focus:outline-none focus:placeholder:text-transparent"
 			/>
 			{props.isRequired && props.errorMessage && props.isDisplayErrorMessage ? (
 				<div className="error-message-container flex items-center before:content-['\002A'] before:font-bold">

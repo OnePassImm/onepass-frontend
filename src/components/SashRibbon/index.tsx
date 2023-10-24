@@ -2,7 +2,7 @@ import { LIST_SASH_RIBBON_INFO } from "./setting";
 
 const SashRibbon = () => {
 	return (
-		<section className="sash-ribbon w-full flex flex-row overflow-hidden">
+		<section className="sash-ribbon h-24 w-full flex flex-row overflow-hidden">
 			<PartRibbon />
 			<PartRibbon />
 		</section>

@@ -63,7 +63,7 @@ export default function FBPost({ post }: InferGetServerSidePropsType<typeof getS
 						<span className="text-2xl font-bold uppercase text-center">{formatDate(new Date(post.createdTime))}</span>
 					</div>
 				</div>
-				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightBlue after:bottom-1/2">
+				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightYellow after:bottom-1/2">
 					<div className="image-container w-[80%] mx-auto">
 						<img
 							className="w-full h-full max-h-[50vh] object-contain"

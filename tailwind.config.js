@@ -4,10 +4,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				lightPink: "#FFF0EF",
-				lightBlue: "#ECF6F6",
-				strongBlue: "#3E9598",
-				strongPink: "#CE3832",
+				lightBlue: "#e7eef7",
+				lightYellow: "#fff7e5",
+				strongYellow: "#E0B021",
+				strongBlue: "#0C1D42",
 				silver: "#B9B7B7",
 			},
 			spacing: {

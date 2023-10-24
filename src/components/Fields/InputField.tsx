@@ -16,7 +16,7 @@ const InputField = (props: TInputField) => {
 				type={props.type}
 				placeholder={props.placeHolder}
 				onChange={(event) => props.handleChangeValue(event.target.value)}
-				className="w-full border-b border-strongPink text-strongPink placeholder-strongPink text-base md:text-xl font-medium focus:outline-none focus:placeholder:text-transparent"
+				className="w-full border-b border-strongBlue text-strongBlue placeholder-strongBlue text-base md:text-xl font-medium focus:outline-none focus:placeholder:text-transparent"
 			/>
 			{props.isRequired && props.errorMessage && props.isDisplayErrorMessage ? (
 				<div className="error-message-container flex items-center before:content-['\002A'] before:font-bold">

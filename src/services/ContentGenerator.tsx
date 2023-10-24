@@ -95,7 +95,7 @@ export const ContentGeneratorToolkit = () => {
 	return (
 		<div className="content-generatetor-toolkit">
 			<div className="flex relative"></div>
-			<div className="text-xl text-strongBlue font-bold font-medium"></div>
+			<div className="text-xl text-strongYellow font-bold font-medium"></div>
 			<div className="h-4"></div>
 			<div className="my-2 my-4"></div>
 		</div>
@@ -148,7 +148,7 @@ const ContentGenerator = (listContent: TListContent) => {
 				return (
 					<a
 						key={index}
-						className="flex text-xl text-strongBlue my-2"
+						className="flex text-xl text-strongYellow my-2"
 						href={contentNode.link}
 						download>
 						{contentNode.displayText}

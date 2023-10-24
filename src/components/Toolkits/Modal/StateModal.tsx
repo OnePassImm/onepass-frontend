@@ -46,7 +46,7 @@ const StateModal = (props: TStateModal) => {
 						<div className="loading animate-spin border-4 border-strongPink border-t-transparent border-l-transparent rounded-full r w-[5vw] h-[5vw]"></div>
 					)}
 					<div className="description-container my-4">
-						<span className="description uppercase font-bold text-2xl text-strongBlue">{props.state === State.SUCCESS ? "Đăng ký thành công" : props.state === State.FAILURE ? "Đăng ký thất bại. Hãy thử lại" : "Đang xử lý..."}</span>
+						<span className="description uppercase font-bold text-2xl text-strongYellow">{props.state === State.SUCCESS ? "Đăng ký thành công" : props.state === State.FAILURE ? "Đăng ký thất bại. Hãy thử lại" : "Đang xử lý..."}</span>
 					</div>
 				</div>
 			</div>

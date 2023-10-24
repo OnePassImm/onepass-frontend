@@ -16,7 +16,7 @@ const AdvisoryGroups = () => {
 					</div>
 					<div className="flex flex-row border-b-gray-400 border-b">
 						<span
-							className={`text-base md:text-4xl font-bold px-4.5 md:px-10 py-2 md:py-4 rounded-t-xl md:rounded-t-3xl cursor-pointer hover:text-lightPink hover:bg-strongPink ${color === "pink" ? "text-lightPink bg-strongPink" : "text-strongPink bg-lightPink"} `}
+							className={`text-base md:text-4xl font-bold px-4.5 md:px-10 py-2 md:py-4 rounded-t-xl md:rounded-t-3xl cursor-pointer hover:text-lightBlue hover:bg-strongPink ${color === "pink" ? "text-lightBlue bg-strongPink" : "text-strongPink bg-lightBlue"} `}
 							onClick={() => {
 								setData(SETTLED_ADVISORY_STEPS);
 								setColor("pink");
@@ -24,7 +24,7 @@ const AdvisoryGroups = () => {
 							ĐỊNH CƯ
 						</span>
 						<span
-							className={`text-base md:text-4xl font-bold px-4.5 md:px-10 py-2 md:py-4 rounded-t-xl md:rounded-t-3xl cursor-pointer hover:text-lightBlue hover:bg-strongBlue ${color === "blue" ? "text-lightBlue bg-strongBlue" : "text-strongBlue bg-lightBlue"}`}
+							className={`text-base md:text-4xl font-bold px-4.5 md:px-10 py-2 md:py-4 rounded-t-xl md:rounded-t-3xl cursor-pointer hover:text-lightYellow hover:bg-strongYellow ${color === "blue" ? "text-lightYellow bg-strongYellow" : "text-strongYellow bg-lightYellow"}`}
 							onClick={() => {
 								setData(STUDY_ABOARD_ADVISORY_STEPS);
 								setColor("blue");

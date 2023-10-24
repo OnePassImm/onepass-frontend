@@ -34,12 +34,12 @@ const SeasonalProjectGroups = () => {
 	return (
 		<section id="seasonal-project-groups">
 			<div
-				className={`seasonal-project-groups-container ${STYLE_GROUPS.flexStart} flex-col my-17.5 md:my-25 py-15 md:py-17.5 bg-lightBlue rounded-[30px] overflow-hidden`}
+				className={`seasonal-project-groups-container ${STYLE_GROUPS.flexStart} flex-col my-17.5 md:my-25 py-15 md:py-17.5 bg-lightYellow rounded-[30px] overflow-hidden`}
 				ref={ref_seft}>
 				<div className="mx-15 md:mx-8">
 					<TitleButton title="Chi tiết" />
 				</div>
-				<div className="mx-15 md:mx-8 mt-14 md:mt-12.5 text-[40px] md:text-[80px] text-strongBlue font-bold whitespace-nowrap">
+				<div className="mx-15 md:mx-8 mt-14 md:mt-12.5 text-[40px] md:text-[80px] text-strongYellow font-bold whitespace-nowrap">
 					<h1>HOẠT ĐỘNG THEO MÙA</h1>
 				</div>
 				<div

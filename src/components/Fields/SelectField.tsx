@@ -14,7 +14,7 @@ type TSelectField = {
 const SelectField = (props: TSelectField) => {
 	return (
 		<div className="select-field-container w-full overflow-hidden">
-			<label className="label w-fit font-medium text-strongPink text-base md:text-xl after:content-[':'] after:ml-[0.125rem] after:mr-1">{props.label}</label>
+			<label className="label w-fit font-medium text-strongBlue text-base md:text-xl after:content-[':'] after:ml-[0.125rem] after:mr-1">{props.label}</label>
 			<select
 				id={props.id}
 				onChange={(event) => props.handleChangeValue(event.target.value)}>

@@ -13,14 +13,14 @@ export type TBgStyles = {
 };
 
 const bgStyles: TBgStyles = {
-	blue: "bg-lightBlue blue-container",
-	pink: "bg-lightPink pink-container",
+	blue: "bg-lightYellow blue-container",
+	pink: "bg-lightBlue pink-container",
 };
 
 const TagInfo = (props: TTagInfo) => {
 	return (
 		<div className={`tag-info ${bgStyles[props.bgColor]} flex flex-col w-full justify-between items-center rounded-lg shadow-lg aspect-[7/10]`}>
-			<h2 className={`title ${props.bgColor === "blue" ? "text-strongBlue" : "text-strongPink"} my-4.5 md:my-8 text-2xl md:text-3xl font-bold`}>{props.header}</h2>
+			<h2 className={`title ${props.bgColor === "blue" ? "text-strongYellow" : "text-strongPink"} my-4.5 md:my-8 text-2xl md:text-3xl font-bold`}>{props.header}</h2>
 			<div className="image-container w-3/4 h-3/6">
 				<img
 					src={props.imgSrc}

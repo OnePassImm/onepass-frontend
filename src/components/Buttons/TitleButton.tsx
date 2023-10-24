@@ -1,7 +1,7 @@
 import { State } from "../../utils/types";
 
 export type TTitleButton = {
-	buttonColor?: "strongPink" | "black";
+	buttonColor?: "strongBlue" | "black";
 	title: string;
 	handleOnClick?: () => void;
 	displayState?: Omit<State, State.FAILURE & State.SUCCESS>;
@@ -14,7 +14,7 @@ const TitleButton = (props: TTitleButton) => {
 	return (
 		<>
 			{props.displayState && props.displayState === State.LOADING ? (
-				<div className="loading animate-spin border-2 md:border-4 border-strongPink border-t-transparent border-l-transparent rounded-full r w-4 md:w-6 h-4 md:h-6"></div>
+				<div className="loading animate-spin border-2 md:border-4 border-strongBlue border-t-transparent border-l-transparent rounded-full r w-4 md:w-6 h-4 md:h-6"></div>
 			) : (
 				<div
 					className={`${!props.useExternal ? "internal-effect" : props.hoverState && "external-effect"} button title-button border-${buttonColor} w-fit h-6 md:h-10 px- px-4 md:px-7 rounded-full border flex items-center justify-center overflow-hidden`}

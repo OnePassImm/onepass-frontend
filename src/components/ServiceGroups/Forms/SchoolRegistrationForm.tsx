@@ -224,7 +224,7 @@ const SchoolRegistrationForm = () => {
 						</div>
 						<div className="form-container w-full md:w-[60%] px-[5%] py-8 ml-0 md:-ml-[3%] bg-white rounded-[30px] min-w-min z-40">
 							<div className="title-container">
-								<span className="title font-extrabold text-4xl lg:text-5xl text-strongPink uppercase">{TITLE}</span>
+								<span className="title font-extrabold text-4xl lg:text-5xl text-strongBlue uppercase">{TITLE}</span>
 							</div>
 							<div className="form-field-container">
 								<div className="info-field-container">
@@ -285,7 +285,7 @@ const SchoolRegistrationForm = () => {
 								</div>
 								<div className={fieldContainer}>
 									<div className="sub-title-container">
-										<span className="text-strongPink font-bold text-xl">Kỳ nhập học</span>
+										<span className="text-strongBlue font-bold text-xl">Kỳ nhập học</span>
 									</div>
 									<div className="list-checkbox-field-container flex flex-row justify-between w-10/12 my-1">
 										<CheckboxField
@@ -364,7 +364,7 @@ const SchoolRegistrationForm = () => {
 								<div className={fieldContainer}>
 									<TitleButton
 										title="Gửi"
-										buttonColor="strongPink"
+										buttonColor="strongBlue"
 										handleOnClick={handleSubmit}
 									/>
 								</div>

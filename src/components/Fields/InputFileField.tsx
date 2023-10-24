@@ -42,7 +42,7 @@ const InputFileField = (props: TInputFileField) => {
 			</label>
 			<label
 				htmlFor={props.id}
-				className="input-file-button flex flex-row my-0.5 md:my-1 cursor-pointer after:text-base after:font-medium after:text-strongBlue after:mx-2"
+				className="input-file-button flex flex-row my-0.5 md:my-1 cursor-pointer after:text-base after:font-medium after:text-strongYellow after:mx-2"
 				ref={ref_inputFileButton}>
 				<div className="flex text-base items-center font-medium text-strongPink border border-strongPink rounded-2xl px-5 text-center pb-[0.125rem]">Chọn tệp</div>
 			</label>

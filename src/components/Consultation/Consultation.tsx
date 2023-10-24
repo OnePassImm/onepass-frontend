@@ -76,7 +76,7 @@ const Consultation = () => {
 						className="w-full h-full object-cover"
 					/>
 				</div>
-				<div className="title-container col-span-3 flex flex-col justify-center items-center text-center text-strongPink">
+				<div className="title-container col-span-3 flex flex-col justify-center items-center text-center text-strongBlue">
 					<span className="title text-[40px] md:text-[80px] font-bold uppercase">{TITLE}</span>
 					<div className="description-container flex flex-col mx-4">
 						<span className="description md:text-3xl md:leading-[38px] font-semibold">Hãy để chuyên viên tư vấn của Can Immigration Vietnam</span>
@@ -118,7 +118,7 @@ const Consultation = () => {
 					</div>
 					<div className="button-container flex justify-center mt-10 md:mt-16">
 						<TitleButton
-							buttonColor="strongPink"
+							buttonColor="strongBlue"
 							title="Đặt hẹn"
 							handleOnClick={handleSubmit}
 							displayState={submissionState}

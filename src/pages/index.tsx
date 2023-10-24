@@ -57,21 +57,21 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 			<div className="w-full">
 				<Navbar isDynamic={true} />
 				<Banner />
-				{/* <SashRibbon /> */}
-				{/* <TagInfoGroups /> */}
-				{/* <SeasonalProjectGroups /> */}
-				{/* <NewsGroup news={news} /> */}
-				{/* <ProgramGroups /> */}
-				{/* <ModalContext.Provider value={{ isOpenModal, handleOpenModal: setIsOpenModal, setModalComponent }}>
+				<SashRibbon />
+				<TagInfoGroups />
+				<SeasonalProjectGroups />
+				<NewsGroup news={news} />
+				<ProgramGroups />
+				<ModalContext.Provider value={{ isOpenModal, handleOpenModal: setIsOpenModal, setModalComponent }}>
 					<ServiceGroups />
-				</ModalContext.Provider> */}
-				{/* <AdvisoryGroups /> */}
-				{/* <ApprovalCases /> */}
-				{/* <Consultation /> */}
-				{/* <Footer /> */}
+				</ModalContext.Provider>
+				<AdvisoryGroups />
+				<ApprovalCases />
+				<Consultation />
+				<Footer />
 				<div
 					id="tool-kit"
-					className="hidden text-white stroke-white stroke-strongPink mr-2 my-10 my-2">
+					className="hidden text-white stroke-white stroke-strongBlue mr-2 my-10 my-2">
 					<ContentGeneratorToolkit />
 				</div>
 			</div>

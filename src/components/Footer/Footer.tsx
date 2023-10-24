@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const Footer = () => {
-	const title = "text-base font-bold whitespace-nowrap uppercase text-strongBlue";
+	const title = "text-base font-bold whitespace-nowrap uppercase text-strongYellow";
 	const info = "font-semibold text-base";
 
 	const iconContainer = "flex w-6 h-6 mr-4 md:ml-4 relative";
@@ -10,7 +10,7 @@ const Footer = () => {
 	const caAddressInfo = "2600 John Street, Markham, ON L3R 3W3, Canada.";
 	return (
 		<section id="footer">
-			<div className="footer-container-wrap bg-lightBlue rounded-t-[30px] mt-17.5 md:mt-25">
+			<div className="footer-container-wrap bg-lightYellow rounded-t-[30px] mt-17.5 md:mt-25">
 				<div className="footer-container grid grid-cols-8 lg:grid-cols-5 grid-rows-5 lg:grid-rows-2 gap-4 md:gap-8 py-10 mx-15 md:mx-8 lg:pr-20">
 					<div className="sub-section col-span-2 lg:col-span-1 justify-items-start">
 						<div className="icon-container relative w-3/4 lg:w-1/2 h-full">
@@ -31,7 +31,7 @@ const Footer = () => {
 						<div className="description-container text-base md:text-xl font-semibold">Với 30 năm kinh nghiệm tư vấn định cư và du học Canada, chúng tôi tự tin sẽ hỗ trợ các bạn đạt được tấm thẻ PR mà bạn mong muốn.</div>
 					</div>
 					<div className="sub-section lg:hidden relative row-start-3 col-span-full">
-						<div className="separate-line absolute h-[1px] w-full bg-strongBlue top-1/2"></div>
+						<div className="separate-line absolute h-[1px] w-full bg-strongYellow top-1/2"></div>
 					</div>
 					<div className="sub-section row-start-4 lg:row-start-auto lg:col-start-2 col-span-5 lg:col-span-1">
 						<div className="vn-address-container">

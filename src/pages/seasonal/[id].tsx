@@ -56,7 +56,7 @@ const SeasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 						<span className="title text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase">{data.title}</span>
 					</div>
 				</div>
-				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightBlue after:bottom-1/2">
+				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightYellow after:bottom-1/2">
 					<div className="image-container w-[80%] mx-auto">
 						<img
 							className="w-full h-full max-h-[50vh] object-contain"
