@@ -7,6 +7,13 @@ import { TConsultationForm } from "../../components/Consultation/types";
 
 export default new _nextConnect().instance.post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TConsultationForm = request.body;
+
+	if (!data.id) {
+		return response.status(400).json({
+			message: "Bad request",
+		});
+	}
+
 	nodemailerTransporter
 		.sendMail({
 			from: process.env["MAIL_USER"],
@@ -16,10 +23,14 @@ export default new _nextConnect().instance.post(async (request: NextApiRequest, 
 		})
 		.then((result) => {
 			console.log(`user: ${data.name} - ${data.id} sent Consultation mail`);
-			return response.status(200).json({ success: true });
+			return response.status(200).json({
+				success: true,
+			});
 		})
 		.catch((error) => {
 			console.trace(error);
-			return response.status(400).json({ message: "Bad request" });
+			return response.status(400).json({
+				message: "Bad request",
+			});
 		});
 });

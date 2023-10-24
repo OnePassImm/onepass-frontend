@@ -2,13 +2,19 @@ import { useContext, useState } from "react";
 import InputField from "../../Fields/InputField";
 import CheckboxField from "../../Fields/CheckboxField";
 import SelectField from "../../Fields/SelectField";
-import InputFileField from "../../Fields/InputFileField";
 import TitleButton from "../../Buttons/TitleButton";
 import { isEmailValid, isPhoneValid } from "../../../utils/validator";
-import { formatBytes, renameFile, totalFileSize } from "../../../utils/helper";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { FILE_FORM_UPLOAD_NAME, FILE_FORM_UPLOAD_TYPE, InstitutionTypeSchool, LIST_COLLEGE_SCHOOL, LIST_HIGH_SCHOOL_PRIVATE, LIST_HIGH_SCHOOL_PUBLIC, LIST_LANGUAGES_SCHOOL, LIST_UNIVERSITY_SCHOOL, MAX_CONTENT_FILE_SIZE, MAX_NUMBER_FILE, Semester } from "../setting";
+import {
+	InstitutionTypeSchool, //
+	LIST_COLLEGE_SCHOOL,
+	LIST_HIGH_SCHOOL_PRIVATE,
+	LIST_HIGH_SCHOOL_PUBLIC,
+	LIST_LANGUAGES_SCHOOL,
+	LIST_UNIVERSITY_SCHOOL,
+	Semester,
+} from "../setting";
 import { TSchoolRegistrationForm } from "../types";
 import { State } from "../../../utils/types";
 import FormContext from "./FormContext";
@@ -30,13 +36,6 @@ const SchoolRegistrationForm = () => {
 	const [semesterThird, setSemesterThird] = useState<TSchoolRegistrationForm["semester"]["semesterThird"]>(false);
 	const [semesterFourth, setSemesterFourth] = useState<TSchoolRegistrationForm["semester"]["semesterFourth"]>(false);
 	const [major, setMajor] = useState<TSchoolRegistrationForm["major"]>();
-
-	const [passportFileList, setPassportFileList] = useState<TSchoolRegistrationForm["files"]>();
-	const [ieltsFileList, setIeltsFileList] = useState<TSchoolRegistrationForm["files"]>();
-	const [transcriptsHighSchoolFileList, setTranscriptsHighSchoolFileList] = useState<TSchoolRegistrationForm["files"]>();
-	const [transcriptsCollegeFileList, setTranscriptsCollegeFileList] = useState<TSchoolRegistrationForm["files"]>();
-	const [fileListErrorMessage, setFileListErrorMessage] = useState<string>();
-	const [isDisplayFileListError, setIsDisplayFileListError] = useState<boolean>(false);
 
 	const listInstitutionTypeSchoolId = "institution-type-school";
 	const listInstitutionTypeSchool: InstitutionTypeSchool[] = Object.entries(InstitutionTypeSchool).map(([item, value]) => value);
@@ -83,7 +82,6 @@ const SchoolRegistrationForm = () => {
 		setIsDisplayPhoneError(false);
 		setIsDisplayInstitutionTypeSchoolError(false);
 		setIsDisplaySchoolError(false);
-		setIsDisplayFileListError(false);
 		if (!name) {
 			setIsDisplayNameError(true);
 			return;
@@ -102,19 +100,6 @@ const SchoolRegistrationForm = () => {
 		}
 		if (!school) {
 			setIsDisplaySchoolError(true);
-			return;
-		}
-		const totalFile = (passportFileList ? passportFileList.length : 0) + (ieltsFileList ? ieltsFileList.length : 0) + (transcriptsHighSchoolFileList ? transcriptsHighSchoolFileList.length : 0) + (transcriptsCollegeFileList ? transcriptsCollegeFileList.length : 0);
-		if (totalFile > MAX_NUMBER_FILE) {
-			setFileListErrorMessage(`Tổng số file nên ít hơn ${MAX_NUMBER_FILE}. Tổng số file hiện tại: ${totalFile}`);
-			setIsDisplayFileListError(true);
-			return;
-		}
-
-		const _totalFileSize = (passportFileList ? totalFileSize(passportFileList) : 0) + (ieltsFileList ? totalFileSize(ieltsFileList) : 0) + (transcriptsHighSchoolFileList ? totalFileSize(transcriptsHighSchoolFileList) : 0) + (transcriptsCollegeFileList ? totalFileSize(transcriptsCollegeFileList) : 0);
-		if (_totalFileSize > MAX_CONTENT_FILE_SIZE) {
-			setFileListErrorMessage(`Tổng dung lượng các file nên ít hơn 25MB. Tống dung lượng các file hiện tại: ${formatBytes(_totalFileSize)}`);
-			setIsDisplayFileListError(true);
 			return;
 		}
 
@@ -136,31 +121,6 @@ const SchoolRegistrationForm = () => {
 			}),
 		);
 		major ? formData.append("major", major) : null;
-
-		if (!!passportFileList) {
-			Array.from(passportFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.PASSPORT}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!ieltsFileList) {
-			Array.from(ieltsFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.IELTS}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!transcriptsHighSchoolFileList) {
-			Array.from(transcriptsHighSchoolFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.TRANSCRIPT_HIGH_SCHOOL}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!transcriptsCollegeFileList) {
-			Array.from(transcriptsCollegeFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.TRANSCRIPT_COLLEGE}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
 
 		setMirrorState(State.LOADING);
 		formContext?.setState(State.LOADING);
@@ -317,49 +277,6 @@ const SchoolRegistrationForm = () => {
 										errorMessage="Ngành học và ghi chú chưa phù hợp"
 										handleChangeValue={setMajor}
 									/>
-								</div>
-								<div className={fieldContainer}>
-									<div className="input-field-container grid grid-rows-2 grid-cols-2 gap-y-4">
-										<InputFileField
-											id="passport"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Passport"
-											handleChangeValue={setPassportFileList}
-										/>
-										<InputFileField
-											id="ielts"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="IELTS"
-											handleChangeValue={setIeltsFileList}
-										/>
-										<InputFileField
-											id="transcriptsHighSchool"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Học bạ và bằng tốt nghiệp"
-											handleChangeValue={setTranscriptsHighSchoolFileList}
-										/>
-										<InputFileField
-											id="transcriptsCollege"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Học bạ và bằng tốt nghiệp Đại Học/Cao Đẳng"
-											handleChangeValue={setTranscriptsCollegeFileList}
-										/>
-									</div>
-									{isDisplayFileListError && fileListErrorMessage ? (
-										<div className={`${fieldContainer} error-message-container before:content-['\\002A'] before:font-bold`}>
-											<span className="font-bold">{fileListErrorMessage}</span>
-										</div>
-									) : (
-										<></>
-									)}
 								</div>
 								<div className={fieldContainer}>
 									<TitleButton

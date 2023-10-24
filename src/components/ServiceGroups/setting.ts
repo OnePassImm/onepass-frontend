@@ -1,16 +1,7 @@
-import { MAX_NUMBER_FILE, MAX_CONTENT_FILE_SIZE, FILE_FORM_UPLOAD_NAME } from "../../utils/settings/setting";
 import { TITLE as InternationalInsuranceTitle } from "./Forms/InternationalInsuranceForm";
 import { TITLE as SchoolRegistrationTitle } from "./Forms/SchoolRegistrationForm";
 import { TITLE as SettlementJobTitle } from "./Forms/SettlementJobForm";
-export { MAX_NUMBER_FILE, MAX_CONTENT_FILE_SIZE, FILE_FORM_UPLOAD_NAME };
 import { TInternationalInsuranceForm, TSchoolRegistrationForm, TSettlementJobForm } from "./types";
-
-export const FILE_FORM_UPLOAD_TYPE = {
-	PASSPORT: "passort",
-	IELTS: "ielts",
-	TRANSCRIPT_HIGH_SCHOOL: "transcript-high-school",
-	TRANSCRIPT_COLLEGE: "transcript-college",
-};
 
 export enum InstitutionTypeSchool {
 	COLLEGE = "College",

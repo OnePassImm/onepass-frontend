@@ -1,13 +1,11 @@
 import { useContext, useState } from "react";
 import InputField from "../../Fields/InputField";
 import SelectField from "../../Fields/SelectField";
-import InputFileField from "../../Fields/InputFileField";
 import TitleButton from "../../Buttons/TitleButton";
-import { FILE_FORM_UPLOAD_NAME, LIST_JOB } from "../setting";
-import { FILE_FORM_UPLOAD_TYPE, TSettlementJobForm } from "../types";
+import { LIST_JOB } from "../setting";
+import { TSettlementJobForm } from "../types";
 import { isEmailValid, isPhoneValid } from "../../../utils/validator";
 import { v4 as uuidv4 } from "uuid";
-import { renameFile } from "../../../utils/helper";
 import axios from "axios";
 import { State } from "../../../utils/types";
 import FormContext from "./FormContext";
@@ -27,13 +25,6 @@ const SettlementJobForm = () => {
 	const [job, setJob] = useState<TSettlementJobForm["job"]>();
 	const [isDisplayJobError, setIsDisplayJobError] = useState<boolean>(false);
 
-	const [passportFileList, setPassportFileList] = useState<TSettlementJobForm["files"]>();
-	const [ieltsFileList, setIeltsFileList] = useState<TSettlementJobForm["files"]>();
-	const [transcriptsHighSchoolFileList, setTranscriptsHighSchoolFileList] = useState<TSettlementJobForm["files"]>();
-	const [transcriptsCollegeFileList, setTranscriptsCollegeFileList] = useState<TSettlementJobForm["files"]>();
-	const [fileListErrorMessage, setFileListErrorMessage] = useState<string>();
-	const [isDisplayFileListError, setIsDisplayFileListError] = useState<boolean>(false);
-
 	const listJobId = "job-registration-list";
 
 	const formContext = useContext(FormContext);
@@ -44,7 +35,6 @@ const SettlementJobForm = () => {
 		setIsDisplayEmailError(false);
 		setIsDisplayPhoneError(false);
 		setIsDisplayJobError(false);
-		setIsDisplayFileListError(false);
 		if (!name) {
 			setIsDisplayNameError(true);
 			return;
@@ -69,31 +59,6 @@ const SettlementJobForm = () => {
 		formData.append("email", email);
 		formData.append("phone", phone);
 		formData.append("job", job);
-
-		if (!!passportFileList) {
-			Array.from(passportFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.PASSPORT}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!ieltsFileList) {
-			Array.from(ieltsFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.IELTS}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!transcriptsHighSchoolFileList) {
-			Array.from(transcriptsHighSchoolFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.TRANSCRIPT_HIGH_SCHOOL}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
-		if (!!transcriptsCollegeFileList) {
-			Array.from(transcriptsCollegeFileList).forEach((file) => {
-				file = renameFile(file, `${id}_${FILE_FORM_UPLOAD_TYPE.TRANSCRIPT_COLLEGE}_${file.name}`);
-				formData.append(FILE_FORM_UPLOAD_NAME, file);
-			});
-		}
 
 		setMirrorState(State.LOADING);
 		formContext?.setState(State.LOADING);
@@ -204,49 +169,6 @@ const SettlementJobForm = () => {
 											handleChangeValue={setJob}
 										/>
 									</div>
-								</div>
-								<div className={fieldContainer}>
-									<div className="input-field-container grid grid-rows-2 grid-cols-2 gap-y-4">
-										<InputFileField
-											id="passport"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Passport"
-											handleChangeValue={setPassportFileList}
-										/>
-										<InputFileField
-											id="ielts"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="IELTS"
-											handleChangeValue={setIeltsFileList}
-										/>
-										<InputFileField
-											id="transcriptsHighSchool"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Học bạ và bằng tốt nghiệp"
-											handleChangeValue={setTranscriptsHighSchoolFileList}
-										/>
-										<InputFileField
-											id="transcriptsCollege"
-											multiple={true}
-											maxFile={5}
-											accept="application/msword, application/vnd.ms-powerpoint, application/pdf, image/*"
-											label="Học bạ và bằng tốt nghiệp Đại Học/Cao Đẳng"
-											handleChangeValue={setTranscriptsCollegeFileList}
-										/>
-									</div>
-									{isDisplayFileListError && fileListErrorMessage ? (
-										<div className={`${fieldContainer} error-message-container before:content-['\\002A'] before:font-bold`}>
-											<span className="font-bold">{fileListErrorMessage}</span>
-										</div>
-									) : (
-										<></>
-									)}
 								</div>
 								<div className={fieldContainer}>
 									<TitleButton

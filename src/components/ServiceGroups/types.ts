@@ -1,12 +1,5 @@
 import { InstitutionTypeSchool } from "./setting";
 
-export const FILE_FORM_UPLOAD_TYPE = {
-	PASSPORT: "passort",
-	IELTS: "ielts",
-	TRANSCRIPT_HIGH_SCHOOL: "transcript-high-school",
-	TRANSCRIPT_COLLEGE: "transcript-college",
-};
-
 export type TSchoolRegistrationForm = {
 	id: string;
 	name: string;
