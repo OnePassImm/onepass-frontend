@@ -1,11 +1,24 @@
 import Head from "next/head";
-import { Banner, Navbar, TagInfoGroups, SeasonalProjectGroups, NewsGroup, ProgramGroups, ServiceGroups, Consultation, AdvisoryGroups, ApprovalCases, Footer } from "../components";
+import {
+	Banner, //
+	Navbar,
+	TagInfoGroups,
+	SeasonalProjectGroups,
+	NewsGroup,
+	ProgramGroups,
+	ServiceGroups,
+	Consultation,
+	AdvisoryGroups,
+	ApprovalCases,
+	Footer,
+} from "../components";
 import { ModalContext, ModalPortal, Toaster } from "../components/Toolkits";
 import { useState } from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getPageNews } from "../services/facebook-api";
 import { TNews } from "../components/NewsGroup/types";
 import { ContentGeneratorToolkit } from "../services/ContentGenerator";
+import SashRibbon from "../components/SashRibbon";
 
 export const getServerSideProps: GetServerSideProps<{
 	news: TNews[];
@@ -44,17 +57,18 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 			<div className="w-full">
 				<Navbar isDynamic={true} />
 				<Banner />
-				<TagInfoGroups />
-				<SeasonalProjectGroups />
-				<NewsGroup news={news} />
-				<ProgramGroups />
-				<ModalContext.Provider value={{ isOpenModal, handleOpenModal: setIsOpenModal, setModalComponent }}>
+				{/* <SashRibbon /> */}
+				{/* <TagInfoGroups /> */}
+				{/* <SeasonalProjectGroups /> */}
+				{/* <NewsGroup news={news} /> */}
+				{/* <ProgramGroups /> */}
+				{/* <ModalContext.Provider value={{ isOpenModal, handleOpenModal: setIsOpenModal, setModalComponent }}>
 					<ServiceGroups />
-				</ModalContext.Provider>
-				<AdvisoryGroups />
-				<ApprovalCases />
-				<Consultation />
-				<Footer />
+				</ModalContext.Provider> */}
+				{/* <AdvisoryGroups /> */}
+				{/* <ApprovalCases /> */}
+				{/* <Consultation /> */}
+				{/* <Footer /> */}
 				<div
 					id="tool-kit"
 					className="hidden text-white stroke-white stroke-strongPink mr-2 my-10 my-2">
