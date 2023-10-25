@@ -28,7 +28,7 @@ const Footer = () => {
 						<div className="title-container text-2xl md:text-4xl font-bold uppercase text-strongPink">Nhận visa Canada cực dễ cùng Can-Immigration</div>
 					</div>
 					<div className="sub-section col-start-3 lg:col-start-auto row-start-2 lg:row-start-auto col-span-5 lg:col-span-2">
-						<div className="description-container text-base md:text-xl font-semibold">Với 30 năm kinh nghiệm tư vấn định cư và du học Canada, chúng tôi tự tin sẽ hỗ trợ các bạn đạt được tấm thẻ PR mà bạn mong muốn.</div>
+						<div className="description-container text-base md:text-xl font-semibold">Với hơn 10 năm kinh nghiệm tư vấn định cư và du học Canada, chúng tôi tự tin sẽ hỗ trợ các bạn đạt được tấm thẻ PR mà bạn mong muốn.</div>
 					</div>
 					<div className="sub-section lg:hidden relative row-start-3 col-span-full">
 						<div className="separate-line absolute h-[1px] w-full bg-strongYellow top-1/2"></div>
