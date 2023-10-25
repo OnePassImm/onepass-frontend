@@ -59,10 +59,15 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				<Banner />
 				<SashRibbon />
 				<TagInfoGroups />
-				<SeasonalProjectGroups />
 				<NewsGroup news={news} />
+				<SeasonalProjectGroups />
 				<ProgramGroups />
-				<ModalContext.Provider value={{ isOpenModal, handleOpenModal: setIsOpenModal, setModalComponent }}>
+				<ModalContext.Provider
+					value={{
+						isOpenModal,
+						handleOpenModal: setIsOpenModal,
+						setModalComponent,
+					}}>
 					<ServiceGroups />
 				</ModalContext.Provider>
 				<AdvisoryGroups />
