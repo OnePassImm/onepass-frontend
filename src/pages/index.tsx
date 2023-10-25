@@ -1,8 +1,8 @@
 import Head from "next/head";
 import {
 	Banner, //
+	SashRibbon,
 	Navbar,
-	TagInfoGroups,
 	SeasonalProjectGroups,
 	NewsGroup,
 	ProgramGroups,
@@ -18,7 +18,6 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getPageNews } from "../services/facebook-api";
 import { TNews } from "../components/NewsGroup/types";
 import { ContentGeneratorToolkit } from "../services/ContentGenerator";
-import SashRibbon from "../components/SashRibbon";
 
 export const getServerSideProps: GetServerSideProps<{
 	news: TNews[];
@@ -58,7 +57,6 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				<Navbar isDynamic={true} />
 				<Banner />
 				<SashRibbon />
-				<TagInfoGroups />
 				<NewsGroup news={news} />
 				<SeasonalProjectGroups />
 				<ProgramGroups />
