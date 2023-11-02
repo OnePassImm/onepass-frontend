@@ -80,7 +80,7 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 				<div
 					id="news-slider"
 					className="w-full mt-8 md:mt-12 mb-6 md:mb-16 items-center flex flex-row overflow-x-scroll scrollbar-hide select-none">
-					{news.map((item, idx) => (
+					{/* {news.map((item, idx) => (
 						<div
 							key={item.id}
 							className={`image-container ${idx === curIdx ? "selected-card" : "normal-card"} aspect-square mx-2 last:mr-0 cursor-pointer`}>
@@ -96,7 +96,7 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 								}}
 							/>
 						</div>
-					))}
+					))} */}
 				</div>
 				<div className="below-navigator-container flex md:hidden my-6 justify-center">
 					<div className="below-navigator flex flex-row">

@@ -54,7 +54,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 				<nav className="w-full flex justify-between items-center">
 					<div className="image-container logo-red-container h-12 relative">
 						<Image
-							src="/logo/logo_red.svg"
+							src="/logo/favicon.svg"
 							alt="logo"
 							fill
 							unoptimized

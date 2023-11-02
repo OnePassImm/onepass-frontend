@@ -45,12 +45,12 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 	return (
 		<>
 			<Head>
-				<title>CANIMMVN</title>
+				<title>ONEPASS</title>
 				<link
 					rel="icon"
 					type="image/svg+xml"
 					sizes="any"
-					href="/logo/logo_red.svg"
+					href="/logo/favicon.svg"
 				/>
 			</Head>
 			<div className="w-full">

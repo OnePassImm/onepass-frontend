@@ -6,16 +6,16 @@ const Footer = () => {
 
 	const iconContainer = "flex w-6 h-6 mr-4 md:ml-4 relative";
 
-	const vnAddressInfo = "Suite 312, Block B - Charmington La Pointe, 181 Cao Thắng, Phường 12, Quận 10, TP.HCM, Việt Nam.";
-	const caAddressInfo = "2600 John Street, Markham, ON L3R 3W3, Canada.";
+	const vnAddressInfo = "Tầng 10, 55 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, TP.HCM, Việt Nam";
+	const caAddressInfo = "Updating...";
 	return (
 		<section id="footer">
 			<div className="footer-container-wrap bg-lightYellow rounded-t-[30px] mt-17.5 md:mt-25">
 				<div className="footer-container grid grid-cols-8 lg:grid-cols-5 grid-rows-5 lg:grid-rows-2 gap-4 md:gap-8 py-10 mx-15 md:mx-8 lg:pr-20">
 					<div className="sub-section col-span-2 lg:col-span-1 justify-items-start">
-						<div className="icon-container relative w-3/4 lg:w-1/2 h-full">
+						<div className="icon-container relative w-full h-full">
 							<Image
-								src="/logo/logo_red.svg"
+								src="/logo/full-logo.svg"
 								alt="logo"
 								fill
 								sizes=""
@@ -25,7 +25,7 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className="sub-section col-span-5 lg:col-span-2">
-						<div className="title-container text-2xl md:text-4xl font-bold uppercase text-strongPink">Nhận visa Canada cực dễ cùng Can-Immigration</div>
+						<div className="title-container text-2xl md:text-4xl font-bold uppercase text-strongPink">Nhận visa Canada cực dễ cùng One Pass</div>
 					</div>
 					<div className="sub-section col-start-3 lg:col-start-auto row-start-2 lg:row-start-auto col-span-5 lg:col-span-2">
 						<div className="description-container text-base md:text-xl font-semibold">Với hơn 10 năm kinh nghiệm tư vấn định cư và du học Canada, chúng tôi tự tin sẽ hỗ trợ các bạn đạt được tấm thẻ PR mà bạn mong muốn.</div>
