@@ -3,7 +3,7 @@ import { TAdvisoryStep } from "./types";
 
 export type TAdvisoryContext = {
 	data: TAdvisoryStep[];
-	color: "pink" | "blue";
+	color: "yellow" | "blue";
 };
 
 const AdvisoryContext = createContext<TAdvisoryContext | null>(null);
