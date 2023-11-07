@@ -5,7 +5,7 @@
         }
 
         .image-runner {
-            animation: marquee 180s linear infinite;
+            animation: marquee 45s linear infinite;
             counter-reset: image-counter;
 
             .inner-image-container {
