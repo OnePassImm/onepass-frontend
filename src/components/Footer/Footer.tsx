@@ -57,22 +57,12 @@ const Footer = () => {
 					</div>
 					<div className="sub-section row-start-4 lg:row-start-auto col-start-7 lg:col-start-auto col-span-2 lg:col-span-1">
 						<div className="phone-container">
-							<div className="settle-phone-container">
-								<div className={`title ${title}`}>Tư vấn định cư</div>
-								<a
-									href="tel:+84901989833"
-									className={`info ${info}`}>
-									0901989833
-								</a>
-							</div>
-							<div className="study-abroad-phone-container">
-								<div className={`title ${title}`}>Tư vấn du học</div>
-								<a
-									href="tel:+84933988893"
-									className={`info ${info}`}>
-									0933988893
-								</a>
-							</div>
+							<div className={`title ${title}`}>Liên hệ tư vấn</div>
+							<a
+								href="tel:+84933988893"
+								className={`info ${info}`}>
+								0933988893
+							</a>
 						</div>
 					</div>
 					<div className="sub-section relative row-start-5 lg:row-start-auto col-start-7 lg:col-start-auto col-span-2 lg:col-span-1">
@@ -80,7 +70,7 @@ const Footer = () => {
 							<div className="gmail-container">
 								<a
 									className={`icon-container ${iconContainer}`}
-									href="mailto:kazenokioku234@gmail.com"
+									href="mailto:info@onepassimm.com"
 									target="_blank">
 									<Image
 										src="/assets/icon/gmail.svg"
@@ -95,7 +85,7 @@ const Footer = () => {
 							<div className="fb-container">
 								<a
 									className={`icon-container ${iconContainer}`}
-									href="https://www.facebook.com/canimmvn"
+									href="https://www.facebook.com/profile.php?id=61550333613885"
 									target="_blank">
 									<Image
 										src="/assets/icon/facebook.svg"
@@ -110,7 +100,7 @@ const Footer = () => {
 							<div className="zalo-container">
 								<a
 									className={`icon-container ${iconContainer}`}
-									href="https://zalo.me/0901989833"
+									href="https://zalo.me/0933988893"
 									target="_blank">
 									<Image
 										src="/assets/icon/zalo.svg"
