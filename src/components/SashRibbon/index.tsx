@@ -2,7 +2,7 @@ import { LIST_SASH_RIBBON_INFO } from "./setting";
 
 const SashRibbon = () => {
 	return (
-		<section className="sash-ribbon h-24 w-full flex flex-row overflow-hidden">
+		<section className="sash-ribbon h-16 md:h-24 w-full flex flex-row overflow-hidden">
 			<PartRibbon />
 			<PartRibbon />
 		</section>
@@ -15,7 +15,7 @@ const PartRibbon = () => {
 			{LIST_SASH_RIBBON_INFO.map((item, index) => (
 				<span
 					key={index}
-					className="h-full w-fit flex shrink-0 items-center mx-[2vw]">
+					className="h-full w-fit flex shrink-0 items-center mx-8">
 					<img
 						src={item.imgSrc}
 						alt={item.imgAlt}
