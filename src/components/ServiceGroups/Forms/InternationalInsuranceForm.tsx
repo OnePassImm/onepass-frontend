@@ -53,12 +53,12 @@ const InternationalInsuranceForm = () => {
 			axios
 				.post("api/submitInternationalInsuranceForm", {
 					id: uuidv4(),
-					name: name,
-					doB: doB,
-					insurancePeriod: insurancePeriod,
-					phone: phone,
-					address: address,
-					email: email,
+					name,
+					doB,
+					insurancePeriod,
+					phone,
+					address,
+					email,
 				})
 				.then((response) => {
 					console.log("response");

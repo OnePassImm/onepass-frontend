@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailerTransporter from "../../utils/nodemailer";
-import _nextConnect from "../../middlewares/nextConnect";
 import { ConsultationFormBody } from "../../components/Consultation/setting";
 import { html } from "../../utils/settings/setting";
 import { TConsultationForm } from "../../components/Consultation/types";
+import nextConnect from "next-connect";
 
-export default new _nextConnect().instance.post(async (request: NextApiRequest, response: NextApiResponse) => {
+export default nextConnect().post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TConsultationForm = request.body;
 
 	if (!data.id) {

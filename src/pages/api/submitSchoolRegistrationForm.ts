@@ -1,17 +1,11 @@
-import type { NextApiRequest } from "next/types";
+import type { NextApiRequest, NextApiResponse } from "next/types";
 import nodemailerTransporter from "../../utils/nodemailer";
+import nextConnect from "next-connect";
 import { html } from "../../utils/settings/setting";
-import _nextConnect from "../../middlewares/nextConnect";
 import { TSchoolRegistrationForm } from "../../components/ServiceGroups/types";
 import { SchoolRegistrationFormBody } from "../../components/ServiceGroups/setting";
 
-export const config = {
-	api: {
-		bodyParser: false,
-	},
-};
-
-export default new _nextConnect().instance.post(async (request: NextApiRequest, response) => {
+export default nextConnect().post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TSchoolRegistrationForm = request.body;
 	data.semester = JSON.parse((<unknown>data.semester) as string);
 

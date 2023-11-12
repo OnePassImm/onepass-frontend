@@ -103,39 +103,24 @@ const SchoolRegistrationForm = () => {
 			return;
 		}
 
-		const id = uuidv4();
-		const formData = new FormData();
-		formData.append("id", id);
-		formData.append("name", name!);
-		formData.append("email", email!);
-		formData.append("phone", phone!);
-		formData.append("institutionTypeSchool", institutionTypeSchool!);
-		formData.append("school", school!);
-		formData.append(
-			"semester",
-			JSON.stringify({
-				semesterFirst: semesterFirst,
-				semesterSecond: semesterSecond,
-				semesterThird: semesterThird,
-				semesterFourth: semesterFourth,
-			}),
-		);
-		major ? formData.append("major", major) : null;
-
 		setMirrorState(State.LOADING);
 		formContext?.setState(State.LOADING);
 		toast.promise(
 			axios
-				.post("api/submitSchoolRegistrationForm", formData, {
-					headers: {
-						"content-type": "multipart/form-data",
-					},
-					onUploadProgress: (process) => {
-						if (!process.total) {
-							return;
-						}
-						console.log((process.loaded * 100) / process.total);
-					},
+				.post("api/submitSchoolRegistrationForm", {
+					id: uuidv4(),
+					name,
+					email,
+					phone,
+					institutionTypeSchool,
+					school,
+					semester: JSON.stringify({
+						semesterFirst: semesterFirst,
+						semesterSecond: semesterSecond,
+						semesterThird: semesterThird,
+						semesterFourth: semesterFourth,
+					}),
+					major: major ? major : null,
 				})
 				.then((response) => {
 					console.log("response");

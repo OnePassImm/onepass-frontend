@@ -19,12 +19,12 @@ export const html = (body: string) => {
                 font-weight: 700;
                 font-size: 36px;
                 text-transform: uppercase;
-                color: rgb(206, 56, 50);
+                color: rgb(12, 29, 66);
             }
             .form-container {
-                border-style: dashed;
+                border-style: solid;
                 border-width: 1px;
-                border-color: rgb(206, 56, 50);
+                border-color: rgb(12, 29, 66);
                 max-width: 500px;
                 margin: auto;
                 display: grid;

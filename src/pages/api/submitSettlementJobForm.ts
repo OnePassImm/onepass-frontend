@@ -1,19 +1,12 @@
-import type { NextApiRequest } from "next/types";
+import type { NextApiRequest, NextApiResponse } from "next/types";
 import nodemailerTransporter from "../../utils/nodemailer";
+import nextConnect from "next-connect";
 import { html } from "../../utils/settings/setting";
-import _nextConnect from "../../middlewares/nextConnect";
 import { SettlementJobFormBody } from "../../components/ServiceGroups/setting";
 import { TSettlementJobForm } from "../../components/ServiceGroups/types";
 
-export const config = {
-	api: {
-		bodyParser: false,
-	},
-};
-
-export default new _nextConnect().instance.post(async (request: NextApiRequest, response) => {
+export default nextConnect().post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TSettlementJobForm = request.body;
-
 	if (!data.id) {
 		return response.status(400).json({
 			message: "Bad request",

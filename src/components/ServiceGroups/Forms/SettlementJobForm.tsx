@@ -52,29 +52,17 @@ const SettlementJobForm = () => {
 			return;
 		}
 
-		const id = uuidv4();
-		const formData = new FormData();
-		formData.append("id", id);
-		formData.append("name", name);
-		formData.append("email", email);
-		formData.append("phone", phone);
-		formData.append("job", job);
-
 		setMirrorState(State.LOADING);
 		formContext?.setState(State.LOADING);
 
 		toast.promise(
 			axios
-				.post("api/submitSettlementJobForm", formData, {
-					headers: {
-						"content-type": "multipart/form-data",
-					},
-					onUploadProgress: (process) => {
-						if (!process.total) {
-							return;
-						}
-						console.log((process.loaded * 100) / process.total);
-					},
+				.post("api/submitSettlementJobForm", {
+					id: uuidv4(),
+					name,
+					email,
+					phone,
+					job,
 				})
 				.then((response) => {
 					console.log("response");
