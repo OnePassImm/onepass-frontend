@@ -33,7 +33,7 @@ const Footer = () => {
 					<div className="sub-section lg:hidden relative row-start-3 col-span-full">
 						<div className="separate-line absolute h-[1px] w-full bg-strongYellow top-1/2"></div>
 					</div>
-					<div className="sub-section row-start-4 lg:row-start-auto lg:col-start-2 col-span-5 lg:col-span-1">
+					<div className="sub-section row-start-4 lg:row-start-auto lg:col-start-2 col-span-5 lg:col-span-2">
 						<div className="vn-address-container">
 							<div className={`title ${title}`}>Văn Phòng Việt Nam</div>
 							<a
@@ -41,17 +41,6 @@ const Footer = () => {
 								target="_blank"
 								className={`info ${info}`}>
 								{vnAddressInfo}
-							</a>
-						</div>
-					</div>
-					<div className="sub-section relative lg:static row-start-5 lg:row-start-auto col-span-5 lg:col-span-1">
-						<div className="ca-address-container absolute lg:static bottom-0 lg:bottom-auto">
-							<div className={`title ${title}`}>Văn Phòng Canada</div>
-							<a
-								href={`https://www.google.com/maps?q=${caAddressInfo}`}
-								target="_blank"
-								className={`info ${info}`}>
-								{caAddressInfo}
 							</a>
 						</div>
 					</div>
