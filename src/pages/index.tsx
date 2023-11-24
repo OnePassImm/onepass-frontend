@@ -54,7 +54,7 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				/>
 			</Head>
 			<div className="home-container w-full">
-				<Navbar isDynamic={true} />
+				<Navbar />
 				<Banner />
 				<div className="spacer h-3.5 md:h-7 border-b-2 w-11/12 mx-auto border-lightBlue"></div>
 				<SashRibbon />

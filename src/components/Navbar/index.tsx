@@ -5,11 +5,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { LINKS } from "./setting";
 import STYLE_GROUPS from "../../utils/styles";
 
-type TNavbar = {
-	isDynamic: boolean;
-};
-
-const Navbar = ({ isDynamic = true }: TNavbar) => {
+const Navbar = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollToPlugin);
 	}, []);
@@ -36,7 +32,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 	}, []);
 
 	const onClickHref = (link: string) => {
-		if (!isDynamic) {
+		if (window.location.pathname.length > 1) {
 			window.location.href = `${window.location.origin}/#${link}`;
 		} else {
 			gsap.to(window, {
