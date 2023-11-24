@@ -75,7 +75,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 		},
 		listContent: [
 			image("/contents/program/job/slides/slide-1.jpg", "TEER 0 & 1: VIỆC LÀM QUẢN LÝ, ĐIỀU HÀNH-slide-1.jpg"), //
-			image("/contents/program/job/slides/slide-2.jpg", "TEER 2-slide-2.jpg"),
+			image("/contents/program/job/slides/slide-2.jpg", "TEER 2:-slide-2.jpg"),
 			image("/contents/program/job/slides/slide-3.jpg", "TEER 3:-slide-3.jpg"),
 			image("/contents/program/job/slides/slide-4.jpg", "TEER 4 & 5:-slide-4.jpg"),
 		],
@@ -154,14 +154,16 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 		},
 		listContent: [
 			image("/contents/program/settled/slides/slide-1.jpg", "CÁC CHƯƠNG TRÌNH ĐỊNH CƯ CANADA-slide-1.jpg"), //
-			image("/contents/program/settled/slides/slide-2.jpg", "PNP ĐỀ CỬ TỈNH-slide-2.jpg"),
-			image("/contents/program/settled/slides/slide-3.jpg", "5 GIAI ĐOẠN TIẾP NHẬN HỒ SƠ-slide-3.jpg"),
-			image("/contents/program/settled/slides/slide-4.jpg", "AIP/SINP ĐỊNH CƯ TRỰC TIẾP-slide-4.jpg"),
-			image("/contents/program/settled/slides/slide-5.jpg", "5 GIAI ĐOẠN TIẾP NHẬN HỒ SƠ-slide-5.jpg"),
-			image("/contents/program/settled/slides/slide-6.jpg", "SUV ĐỊNH CƯ ĐẦU TƯ KHỞI NGHIỆP-slide-6.jpg"),
-			image("/contents/program/settled/slides/slide-7.jpg", "TIMELINE-slide-7.jpg"),
+			image("/contents/program/settled/slides/slide-2.jpg", "CANADA NEWS-slide-2.jpg"),
+			image("/contents/program/settled/slides/slide-3.jpg", "4 CHƯƠNG TRÌNH ĐỊNH CƯ CANADA-slide-3.jpg"),
+			image("/contents/program/settled/slides/slide-4.jpg", "PNP-ĐỀ CỬ TỈNH BANG-slide-4.jpg"),
+			image("/contents/program/settled/slides/slide-5.jpg", "CÁC YÊU CẦU CỦA CHƯƠNG TRÌNH PNP-slide-5.jpg"),
+			image("/contents/program/settled/slides/slide-6.jpg", "AIP/SINP ĐỊNH CƯ TRỰC TIẾP-slide-6.jpg"),
+			image("/contents/program/settled/slides/slide-7.jpg", "CÁC YÊU CẦU CỦA CHƯƠNG TRÌNH AIP/SINP-slide-7.jpg"),
 			image("/contents/program/settled/slides/slide-8.jpg", "EXPRESS ENTRY-slide-8.jpg"),
 			image("/contents/program/settled/slides/slide-9.jpg", "EXPRESS ENTRY CEC/FSW-slide-9.jpg"),
+			image("/contents/program/settled/slides/slide-10.jpg", "SUV-ĐỊNH CƯ ĐẦU TƯ KHỞI NGHIỆP-slide-10.jpg"),
+			image("/contents/program/settled/slides/slide-11.jpg", "TIMELINE-slide-11.jpg"),
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
