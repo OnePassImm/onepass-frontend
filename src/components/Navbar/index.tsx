@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap/dist/gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
@@ -48,16 +49,18 @@ const Navbar = () => {
 			ref={ref_self}>
 			<div className="bg-white px-6 sm:px-8 py-2">
 				<nav className="w-full flex justify-between items-center">
-					<div className="image-container logo-red-container h-12 relative">
-						<Image
-							src="/logo/favicon.svg"
-							alt="logo"
-							fill
-							unoptimized
-							sizes=""
-							className="!relative !w-auto"
-						/>
-					</div>
+					<Link href="/">
+						<div className="image-container logo-red-container h-12 relative">
+							<Image
+								src="/logo/favicon.svg"
+								alt="logo"
+								fill
+								unoptimized
+								sizes=""
+								className="!relative !w-auto"
+							/>
+						</div>
+					</Link>
 					<div
 						className="hamburger before:bg-black after:bg-black block sm:hidden w-8 relative cursor-pointer"
 						onClick={() => setIsActive(!isActive)}></div>
