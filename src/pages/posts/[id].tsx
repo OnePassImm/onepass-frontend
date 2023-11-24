@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import { getPostById} from "../../services/facebook-api";
+import { getPostById } from "../../services/facebook-api";
 import { formatDate, formatNewsTitle } from "../../utils/helper";
 import { Navbar, Footer } from "../../components";
 
@@ -50,7 +50,7 @@ export default function FBPost({ post }: InferGetServerSidePropsType<typeof getS
 					rel="icon"
 					type="image/svg+xml"
 					sizes="any"
-					href="/logo/logo_red.svg"
+					href="/logo/favicon.svg"
 				/>
 			</Head>
 			<div className="w-full">

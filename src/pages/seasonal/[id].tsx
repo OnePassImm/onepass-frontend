@@ -46,7 +46,7 @@ const SeasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 					rel="icon"
 					type="image/svg+xml"
 					sizes="any"
-					href="/logo/logo_red.svg"
+					href="/logo/favicon.svg"
 				/>
 			</Head>
 			<div className="w-full">
