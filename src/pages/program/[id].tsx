@@ -51,7 +51,7 @@ const ProgramPost: NextPage<TProgramInfoProps> = ({ data }) => {
 			</Head>
 			<div className="w-full">
 				<Navbar />
-				<div className="post-container-wrap w-[80%] mx-auto mt-36 mb-6 md:mb-5">
+				<div className="post-container-wrap w-[80%] mx-auto pt-36 pb-6 md:pb-5">
 					<div className="title-container text-center mb-6 md:mb-5">
 						<span className="title text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase">{data.posterTitle}</span>
 					</div>
