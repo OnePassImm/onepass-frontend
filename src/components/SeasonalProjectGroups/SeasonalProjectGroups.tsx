@@ -4,7 +4,6 @@ import gsap from "gsap/dist/gsap";
 import Draggable from "gsap/dist/Draggable";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SeasonalProject from "./SeasonalProject";
-import TitleButton from "../Buttons/TitleButton";
 import { useIsomorphicLayoutEffect } from "../../utils/helper";
 import { LIST_GENERAL_INFO_PROJECT } from "./setting";
 
