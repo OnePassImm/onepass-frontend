@@ -4,7 +4,6 @@ import {
 	SashRibbon,
 	Navbar,
 	SeasonalProjectGroups,
-	NewsGroup,
 	ProgramGroups,
 	ServiceGroups,
 	Consultation,
@@ -18,7 +17,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getPageNews } from "../services/facebook-api";
 import { TNews } from "../components/NewsGroup/types";
 import { ContentGeneratorToolkit } from "../services/ContentGenerator";
-import NavbarContext from "./context";
+import NavbarContext from "../components/Navbar/NavbarContext";
 
 export const getServerSideProps: GetServerSideProps<{
 	news: TNews[];

@@ -23,3 +23,6 @@ export {
 	Footer,
 	ApprovalCases,
 };
+
+import NavbarContext from "./Navbar/NavbarContext";
+export { NavbarContext };

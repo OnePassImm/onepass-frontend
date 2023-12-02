@@ -5,7 +5,7 @@ import gsap from "gsap/dist/gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { LINKS } from "./setting";
 import STYLE_GROUPS from "../../utils/styles";
-import NavbarContext from "../../pages/context";
+import NavbarContext from "./NavbarContext";
 
 const Navbar = () => {
 	useEffect(() => {
