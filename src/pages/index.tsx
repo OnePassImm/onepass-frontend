@@ -82,7 +82,6 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				<div className="spacer h-3.5 md:h-7 border-b-2 w-11/12 mx-auto border-lightBlue"></div>
 				<SashRibbon />
 				<div className="spacer border-b-2 w-11/12 mx-auto border-lightBlue"></div>
-				<NewsGroup news={news} />
 				<SeasonalProjectGroups />
 				<ProgramGroups />
 				<ModalContext.Provider
