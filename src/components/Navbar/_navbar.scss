@@ -1,14 +1,5 @@
 #navbar {
-  --navbar-height: 0;
   transition: top 0.3s ease-in-out;
-
-  &.show {
-    top: 0;
-  }
-
-  &.hide {
-    top: var(--navbar-height);
-  }
 
   nav div.hamburger {
     $hamburger-height: 0.625rem;

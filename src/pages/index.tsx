@@ -13,11 +13,12 @@ import {
 	Footer,
 } from "../components";
 import { ModalContext, ModalPortal, Toaster } from "../components/Toolkits";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getPageNews } from "../services/facebook-api";
 import { TNews } from "../components/NewsGroup/types";
 import { ContentGeneratorToolkit } from "../services/ContentGenerator";
+import NavbarContext from "./context";
 
 export const getServerSideProps: GetServerSideProps<{
 	news: TNews[];
@@ -42,6 +43,19 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 	const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 	const [modalComponent, setModalComponent] = useState<JSX.Element | null>(null);
 
+	const [navbarHeight, setNavbarHeight] = useState<number>(0);
+	const ref_filler = useRef<HTMLDivElement>(null);
+	const updateFillerHeight = () => {
+		if (!ref_filler || !ref_filler.current) {
+			return;
+		}
+		ref_filler.current.style.height = `${navbarHeight}px`;
+	};
+
+	useEffect(() => {
+		updateFillerHeight();
+	}, [navbarHeight]);
+
 	return (
 		<>
 			<Head>
@@ -54,7 +68,16 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				/>
 			</Head>
 			<div className="home-container w-full">
-				<Navbar />
+				<NavbarContext.Provider
+					value={{
+						navbarHeight,
+						setNavbarHeight,
+					}}>
+					<Navbar />
+				</NavbarContext.Provider>
+				<div
+					ref={ref_filler}
+					className="filler"></div>
 				<Banner />
 				<div className="spacer h-3.5 md:h-7 border-b-2 w-11/12 mx-auto border-lightBlue"></div>
 				<SashRibbon />

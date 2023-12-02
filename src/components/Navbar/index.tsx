@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap/dist/gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { LINKS } from "./setting";
 import STYLE_GROUPS from "../../utils/styles";
+import NavbarContext from "../../pages/context";
 
 const Navbar = () => {
 	useEffect(() => {
@@ -14,13 +15,19 @@ const Navbar = () => {
 	const [isActive, setIsActive] = useState<boolean>(false);
 	const ref_self = useRef<HTMLDivElement>(null);
 
+	// Handle click outside
 	const handleClickOutside = () => {
 		setIsActive(false);
 	};
 	useOutsideAlerter(ref_self, handleClickOutside);
 
+	// Update navbar height to context
+	const navbarContext = useContext(NavbarContext);
 	const updateCSSVariableHeightNavbar = () => {
-		ref_self.current?.style.setProperty("--navbar-height", `-${ref_self.current?.offsetHeight - 4}px`);
+		if (!navbarContext || !ref_self || !ref_self.current) {
+			return;
+		}
+		navbarContext.setNavbarHeight(ref_self.current.offsetHeight);
 	};
 
 	useEffect(() => {
@@ -32,6 +39,7 @@ const Navbar = () => {
 		return () => window.removeEventListener("resize", updateCSSVariableHeightNavbar);
 	}, []);
 
+	// Navigate to href
 	const onClickHref = (link: string) => {
 		if (window.location.pathname.length > 1) {
 			window.location.href = `${window.location.origin}/#${link}`;
