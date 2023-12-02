@@ -3,7 +3,7 @@ import Image from "next/image";
 const ImageRunner = () => {
 	return (
 		<div className="image-runner h-full flex shrink-0 relative ">
-			{[...Array(17).keys()].reverse().map((idx) => (
+			{[...Array(23).keys()].reverse().map((idx) => (
 				<div
 					key={idx}
 					className="image-container h-full w-fit flex shrink-0 items-center px-4 py-[4vh] border-r border-silver">
