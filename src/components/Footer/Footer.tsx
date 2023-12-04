@@ -1,13 +1,32 @@
 import Image from "next/image";
 
+const title = "text-base font-bold whitespace-nowrap uppercase text-strongYellow";
+const info = "font-semibold text-base";
+
+const iconContainer = "flex w-6 h-6 mr-4 md:ml-4 relative";
+
+const vnAddressInfo = "Tầng 10, 55 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, TP.HCM, Việt Nam";
+const caAddressInfo = "Updating...";
+
+type TContactInfo = {
+	name: string;
+	phone: string;
+};
+const CONTACT_LIST: TContactInfo[] = [
+	{
+		name: "Winston Huynh",
+		phone: "933988893",
+	},
+	{
+		name: "Grace Do",
+		phone: "978288188",
+	},
+	{
+		name: "William",
+		phone: "913138994",
+	},
+];
 const Footer = () => {
-	const title = "text-base font-bold whitespace-nowrap uppercase text-strongYellow";
-	const info = "font-semibold text-base";
-
-	const iconContainer = "flex w-6 h-6 mr-4 md:ml-4 relative";
-
-	const vnAddressInfo = "Tầng 10, 55 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, TP.HCM, Việt Nam";
-	const caAddressInfo = "Updating...";
 	return (
 		<section id="footer">
 			<div className="footer-container-wrap bg-lightYellow rounded-t-[30px] mt-17.5 md:mt-25">
@@ -33,7 +52,7 @@ const Footer = () => {
 					<div className="sub-section lg:hidden relative row-start-3 col-span-full">
 						<div className="separate-line absolute h-[1px] w-full bg-strongYellow top-1/2"></div>
 					</div>
-					<div className="sub-section row-start-4 lg:row-start-auto lg:col-start-2 col-span-5 lg:col-span-2">
+					<div className="sub-section row-start-4 lg:row-start-auto lg:col-start-2 col-span-full lg:col-span-2">
 						<div className="vn-address-container">
 							<div className={`title ${title}`}>Văn Phòng Việt Nam</div>
 							<a
@@ -44,17 +63,20 @@ const Footer = () => {
 							</a>
 						</div>
 					</div>
-					<div className="sub-section row-start-4 lg:row-start-auto col-start-7 lg:col-start-auto col-span-2 lg:col-span-1">
-						<div className="phone-container">
+					<div className="sub-section row-start-5 lg:row-start-auto lg:col-start-auto col-span-2 lg:col-span-1">
+						<div className="phone-container flex flex-col">
 							<div className={`title ${title}`}>Liên hệ tư vấn</div>
-							<a
-								href="tel:+84933988893"
-								className={`info ${info}`}>
-								0933988893
-							</a>
+							{CONTACT_LIST.map((item) => (
+								<a
+									className="tel-contact grid grid-cols-2"
+									href={`tel:+84${item.phone}`}>
+									<span className="text-sm font-bold">{item.name}:</span>
+									<span className="tracking-wide">{`0${item.phone}`}</span>
+								</a>
+							))}
 						</div>
 					</div>
-					<div className="sub-section relative row-start-5 lg:row-start-auto col-start-7 lg:col-start-auto col-span-2 lg:col-span-1">
+					<div className="sub-section relative row-start-5 lg:row-start-auto col-start-6 lg:col-start-auto lg:col-span-1 justify-self-center">
 						<div className="social-container flex absolute bottom-0">
 							<div className="gmail-container">
 								<a
