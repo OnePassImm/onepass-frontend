@@ -6,7 +6,7 @@ export type TProgramInfo = {
 	thumbnailTitle: string;
 	thumbnailImage: TImage;
 	posterTitle: string;
-	posterImage: TImage;
+	posterImage?: TImage;
 	listContent: TListContent;
 };
 
