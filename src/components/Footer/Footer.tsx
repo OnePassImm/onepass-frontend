@@ -70,7 +70,7 @@ const Footer = () => {
 								<a
 									className="tel-contact grid grid-cols-2"
 									href={`tel:+84${item.phone}`}>
-									<span className="text-sm font-bold">{item.name}:</span>
+									<span className="text-sm font-bold">{item.name}</span>
 									<span className="tracking-wide">{`0${item.phone}`}</span>
 								</a>
 							))}
