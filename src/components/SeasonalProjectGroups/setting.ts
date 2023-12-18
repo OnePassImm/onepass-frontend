@@ -26,7 +26,7 @@ export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 			listItem("Định hướng về du học trong tương lai."),
 			listItem("Nâng cao về kiến thức và văn hoá về đất nước và con người Canada."),
 			listItem("Làm quen với cuộc sống du học, có cơ hội gặp mặt bạn bè quốc tế."),
-			listItem("Nhận được giấy chứng nhận hoàn thành 2 tuần winter camp 2023 từ trường."),
+			listItem("Nhận được giấy chứng nhận hoàn thành 2 tuần summer camp 2023 từ trường."),
 			listItem("Nâng cao trình độ Anh ngữ: kỹ năng giao tiếp, nghe nói, tự tin khi sử dụng tiếng Anh."),
 			listItem("Các kỹ năng, sự hiểu biết khác tại nước hàng đầu trên thế giới: tính độc lập, tự chủ giải quyết các vấn đề, kỹ năng làm việc nhóm."),
 			listItem("Trong quá trình tham gia trại đông các học sinh được phép chuyển đổi sang study permit và chính thức học tập tại Canada."),
