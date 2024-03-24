@@ -11,26 +11,30 @@ const caAddressInfo = "Updating...";
 type TContactInfo = {
 	name: string;
 	phone: string;
+	email: string;
 };
 const CONTACT_LIST: TContactInfo[] = [
 	{
 		name: "Winston Huynh",
 		phone: "933988893",
-	},
-	{
-		name: "Grace Do",
-		phone: "978288188",
+		email: "winston@onepassimm.com",
 	},
 	{
 		name: "William",
 		phone: "913138994",
+		email: "william@onepassimm.com",
+	},
+	{
+		name: "Grace Do",
+		phone: "978288188",
+		email: "grace.hdo@onepassimm.com",
 	},
 ];
 const Footer = () => {
 	return (
 		<section id="footer">
 			<div className="footer-container-wrap bg-lightYellow rounded-t-[30px] mt-17.5 md:mt-25">
-				<div className="footer-container grid grid-cols-8 lg:grid-cols-5 grid-rows-5 lg:grid-rows-2 gap-4 md:gap-8 py-10 mx-15 md:mx-8 lg:pr-20">
+				<div className="footer-container relative grid grid-cols-8 lg:grid-cols-5 grid-rows-5 lg:grid-rows-2 gap-4 md:gap-8 py-10 mx-15 md:mx-8 lg:pr-20">
 					<div className="sub-section col-span-2 lg:col-span-1 justify-items-start">
 						<div className="icon-container relative w-full h-full">
 							<Image
@@ -63,66 +67,75 @@ const Footer = () => {
 							</a>
 						</div>
 					</div>
-					<div className="sub-section row-start-5 lg:row-start-auto lg:col-start-auto col-span-2 lg:col-span-1">
-						<div className="phone-container flex flex-col">
+					<div className="sub-section row-start-5 lg:row-start-auto lg:col-start-4 col-span-full">
+						<div className="contact-container flex flex-col">
 							<div className={`title ${title}`}>Liên hệ tư vấn</div>
 							{CONTACT_LIST.map((item) => (
-								<a
-									className="tel-contact grid grid-cols-2"
-									href={`tel:+84${item.phone}`}>
-									<span className="text-sm font-bold">{item.name}</span>
-									<span className="tracking-wide">{`0${item.phone}`}</span>
-								</a>
+								<>
+									<div
+										key={item.phone}
+										className="contact grid grid-cols-5">
+										<span className="text-sm font-bold">{item.name}</span>
+										<a
+											className="tel-contact"
+											href={`tel:+84${item.phone}`}>{`0${item.phone}`}</a>
+										<a
+											className="mail-contact"
+											href={`mailto:${item.email}`}
+											target="_blank">
+											{item.email}
+										</a>
+									</div>
+									<div className="separate-line h-[1px] mb-2 w-2/3 bg-silver"></div>
+								</>
 							))}
 						</div>
 					</div>
-					<div className="sub-section relative row-start-5 lg:row-start-auto col-start-6 lg:col-start-auto lg:col-span-1 justify-self-center">
-						<div className="social-container flex absolute bottom-0">
-							<div className="gmail-container">
-								<a
-									className={`icon-container ${iconContainer}`}
-									href="mailto:info@onepassimm.com"
-									target="_blank">
-									<Image
-										src="/assets/icon/gmail.svg"
-										alt="gmail.svg"
-										fill
-										unoptimized
-										sizes="88px"
-										className="!relative"
-									/>
-								</a>
-							</div>
-							<div className="fb-container">
-								<a
-									className={`icon-container ${iconContainer}`}
-									href="https://www.facebook.com/profile.php?id=61550333613885"
-									target="_blank">
-									<Image
-										src="/assets/icon/facebook.svg"
-										alt="gmail.svg"
-										fill
-										unoptimized
-										sizes="40px"
-										className="!relative"
-									/>
-								</a>
-							</div>
-							<div className="zalo-container">
-								<a
-									className={`icon-container ${iconContainer}`}
-									href="https://zalo.me/0933988893"
-									target="_blank">
-									<Image
-										src="/assets/icon/zalo.svg"
-										alt="gmail.svg"
-										fill
-										unoptimized
-										sizes="50px"
-										className="!relative"
-									/>
-								</a>
-							</div>
+					<div className="social-container flex absolute bottom-10 right-0">
+						<div className="gmail-container">
+							<a
+								className={`icon-container ${iconContainer}`}
+								href="mailto:info@onepassimm.com"
+								target="_blank">
+								<Image
+									src="/assets/icon/gmail.svg"
+									alt="gmail.svg"
+									fill
+									unoptimized
+									sizes="88px"
+									className="!relative"
+								/>
+							</a>
+						</div>
+						<div className="fb-container">
+							<a
+								className={`icon-container ${iconContainer}`}
+								href="https://www.facebook.com/profile.php?id=61550333613885"
+								target="_blank">
+								<Image
+									src="/assets/icon/facebook.svg"
+									alt="gmail.svg"
+									fill
+									unoptimized
+									sizes="40px"
+									className="!relative"
+								/>
+							</a>
+						</div>
+						<div className="zalo-container">
+							<a
+								className={`icon-container ${iconContainer}`}
+								href="https://zalo.me/0933988893"
+								target="_blank">
+								<Image
+									src="/assets/icon/zalo.svg"
+									alt="gmail.svg"
+									fill
+									unoptimized
+									sizes="50px"
+									className="!relative"
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
