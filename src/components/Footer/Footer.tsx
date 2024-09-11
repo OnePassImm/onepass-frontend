@@ -24,11 +24,6 @@ const CONTACT_LIST: TContactInfo[] = [
 		phone: "913138994",
 		email: "william@onepassimm.com",
 	},
-	{
-		name: "Grace Do",
-		phone: "978288188",
-		email: "grace.hdo@onepassimm.com",
-	},
 ];
 const Footer = () => {
 	return (
