@@ -165,7 +165,7 @@ const InternationalInsuranceForm = () => {
 									</div>
 								</div>
 								<div className={`${fieldContainer} mt-11`}>
-									<span className="description font-medium text-base md:text-xl text-strongBlue">Sau khi đăng kí đầy đủ thông tin, CAN Immigration sẽ gửi email và cách thức thanh toán bảo hiểm.</span>
+									<span className="description font-medium text-base md:text-xl text-strongBlue">Sau khi đăng kí đầy đủ thông tin, OnePass sẽ gửi email và cách thức thanh toán bảo hiểm.</span>
 								</div>
 								<div className={fieldContainer}>
 									<TitleButton
